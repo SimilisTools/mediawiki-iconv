@@ -1,0 +1,23 @@
+{
+	"name": "mediawiki/iconv",
+	"type": "mediawiki-extension",
+	"description": "Allows using Iconv and convert to ASCII in MediaWiki",
+	"keywords": [
+		"MediaWiki"
+	],
+	"homepage": "https://github.com/SimilisTools/mediawiki-iconv",
+	"license": "GPL-3.0+",
+	"authors": [
+		{
+			"name": "Toni Hermoso Pulido",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.4.0",
+		"composer/installers": "1.*,>=1.0.1"
+	},
+	"autoload": {
+		"files": ["Iconv.php"]
+	}
+}
