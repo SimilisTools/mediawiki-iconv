@@ -10,7 +10,7 @@ call_user_func( function() {
 			'path' => __FILE__,
 			'name' => "Iconv",
 			'description' => "Allows using Iconv and convert to ASCII in MediaWiki",
-			'version' => 0.2,
+			'version' => 0.2.1,
 			'author' => "@toniher",
 			'url' => "https://mediawiki.org/wiki/User:Toniher",
 	);
@@ -29,7 +29,7 @@ call_user_func( function() {
 	);
 
 	// Characters to remove
-	$GLOBALS['wgIconv_ASCIIremove'][] = array( "¿", "?", "¡", "—" );
+	$GLOBALS['wgIconv_ASCIIremove'][] = array( "¿", "?", "¡", "—", "·" );
 
 });
 
