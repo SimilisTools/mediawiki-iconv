@@ -10,7 +10,7 @@ call_user_func( function() {
 			'path' => __FILE__,
 			'name' => "Iconv",
 			'description' => "Allows using Iconv and convert to ASCII in MediaWiki",
-			'version' => 0.2.1,
+			'version' => "0.2.1",
 			'author' => "@toniher",
 			'url' => "https://mediawiki.org/wiki/User:Toniher",
 	);
