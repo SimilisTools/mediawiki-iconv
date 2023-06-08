@@ -19,10 +19,12 @@ call_user_func(function () {
 
     // http://stackoverflow.com/questions/3542717/how-to-transliterate-accented-characters-into-plain-ascii-characters
 
+    $GLOBALS["wgExtensionMessagesFiles"]["Iconv"] = __DIR__ . "/Iconv.i18n.php";
+    $GLOBALS["wgExtensionMessagesFiles"]["IconvMagic"] =
+        __DIR__ . "/Iconv.i18n.magic.php";
+
     # Define a setup function
     $GLOBALS["wgHooks"]["ParserFirstCallInit"][] = "wfIconv_Setup";
-    # Add a hook to initialise the magic word
-    $GLOBALS["wgHooks"]["LanguageGetMagic"][] = "wfIconv_Magic";
 
     // Mapping of characters
     $GLOBALS["wgIconv_ASCIImapping"] = [
@@ -38,14 +40,6 @@ function wfIconv_Setup(&$parser)
 {
     $parser->setFunctionHook("iconv", "executeIconv", SFH_OBJECT_ARGS);
     $parser->setFunctionHook("toASCII", "executeToASCII", SFH_OBJECT_ARGS);
-    return true;
-}
-
-function wfIconv_Magic(&$magicWords, $langCode)
-{
-    $magicWords["iconv"] = [0, "iconv"];
-    $magicWords["toASCII"] = [0, "toASCII"];
-    # unless we return true, other parser functions extensions won't get loaded.
     return true;
 }
 
