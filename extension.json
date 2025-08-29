@@ -1,0 +1,22 @@
+{
+    "name": "Iconv",
+    "version": "0.3.0",
+    "author": ["@toniher"],
+	  "url": "https://github.com/SimilisTools/mediawiki-iconv",
+    "descriptionmsg": "iconv-desc",
+    "type": "parserhook",
+    "license-name": "MIT",
+    "MessagesDirs": {
+        "Iconv": [
+            "i18n"
+        ]
+    },
+    "AutoloadClasses": {
+        "MediaWiki\\Extension\\Iconv\\IconvHooks": "includes/IconvHooks.php"
+    },
+    "Hooks": {
+        "ParserFirstCallInit": "MediaWiki\\Extension\\Iconv\\IconvHooks::onParserFirstCallInit"
+    },
+    "manifest_version": 2
+}
+
